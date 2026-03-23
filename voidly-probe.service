@@ -1,0 +1,23 @@
+[Unit]
+Description=Voidly Probe Lite — Censorship Monitoring
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+# Change these to match your setup:
+User=pi
+WorkingDirectory=/home/pi/probe-lite
+ExecStart=/usr/bin/node probe.mjs --interval 300
+Restart=always
+RestartSec=30
+StandardOutput=journal
+StandardError=journal
+
+# Security hardening
+NoNewPrivileges=yes
+ProtectSystem=strict
+ReadWritePaths=/home/pi/probe-lite
+
+[Install]
+WantedBy=multi-user.target

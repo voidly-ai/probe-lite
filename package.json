@@ -1,0 +1,18 @@
+{
+  "name": "@voidly/probe-lite",
+  "version": "1.0.0",
+  "description": "Lightweight censorship monitoring probe for Raspberry Pi & headless Linux",
+  "type": "module",
+  "bin": {
+    "voidly-probe": "./probe.mjs"
+  },
+  "scripts": {
+    "start": "node probe.mjs",
+    "register": "node probe.mjs --register"
+  },
+  "keywords": ["censorship", "probe", "raspberry-pi", "monitoring", "ooni"],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  }
+}
